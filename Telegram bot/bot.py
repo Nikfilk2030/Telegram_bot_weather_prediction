@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 import keys
+import pandas as pd
 
 token = keys.bot_token
 
@@ -41,10 +42,10 @@ def message_reply(message):
 
 
 @bot.message_handler(content_types='location')
-def message_reply(message):
-    print(message)
+def geolocation_reply(message):
     lng = message.location.longitude
     lat = message.location.latitude
+
     bot.send_message(message.chat.id, f'Your location: longitude {message.location.longitude},'
                                       f' latitude {message.location.latitude}')
 

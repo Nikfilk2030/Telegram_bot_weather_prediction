@@ -9,13 +9,12 @@ def get_latlng(city: str) -> tp.Tuple:
 
 def create_latlng(cities: tp.List) -> tp.NoReturn:
     with open('latlngs.txt', 'w') as file:
+        print('locations used to train your model:')
         for city in cities:
             file.write('{} {} {}\n'.format(city, *get_latlng(city)))
+
 
 def get_cities_list(file: str) -> tp.List:
     with open(file) as f:
         l = [row.strip() for row in f.readlines()]
     return l
-
-
-create_latlng(get_cities_list('cities.txt'))

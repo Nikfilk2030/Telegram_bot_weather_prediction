@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from time import sleep
 
-token = '2065553085:AAEbFGvC6uxJxfO2j7bqKVNG_WyCwUGKRsM'
+token = 'INSERT YOUR TOKEN'
 
 bot = telebot.TeleBot(token)
 

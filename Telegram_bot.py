@@ -64,11 +64,11 @@ def message_reply(message):
 
     elif message.text == button_text1:  # Predict weather
         bot.send_message(message.chat.id, "Send your geolocation, you have to use this button:")
-        geoposition_instruction_photo = open('Telegram bot/geoposition.jpg', 'rb')
+        geoposition_instruction_photo = open('Bot_pictures/geoposition.jpg', 'rb')
         bot.send_photo(message.chat.id, geoposition_instruction_photo)
 
     elif message.text == button_text2:  # Get a meme
-        dog_meme_photo = open('Telegram bot/dog_meme.jpg', 'rb')
+        dog_meme_photo = open('Bot_pictures/dog_meme.jpg', 'rb')
         bot.send_message(message.chat.id, 'Sending a photo...')
         bot.send_photo(message.chat.id, dog_meme_photo)
 

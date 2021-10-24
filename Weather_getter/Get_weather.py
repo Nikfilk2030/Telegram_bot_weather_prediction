@@ -4,7 +4,6 @@ import datetime
 from datetime import datetime, timedelta
 import keys
 
-
 # Initing OWM
 owm = OWM(keys.owm_token)
 mgr = owm.weather_manager()
@@ -14,7 +13,7 @@ def get_current_weather(lat: float, lng: float) -> pd.DataFrame:  # Is this mark
     global mgr
     observation = mgr.weather_at_coords(lat, lng)
     w = observation.weather
-    now = datetime.datetime.now()
+    now = datetime.now()
 
     data = {'humidity': [w.humidity],
             'pressure': [w.pressure["press"]],
@@ -68,3 +67,11 @@ def get_three_days_weather(lat: float, lng: float) -> pd.DataFrame:  # Is this m
                                      'hour', 'lat', 'lng'])
 
     return df
+
+
+print(get_three_days_weather(55.81, 37.36))
+
+
+def get_location(lat: float, lng: float):
+    global mgr
+    return mgr.weather_at_coords(lat, lng).location.name

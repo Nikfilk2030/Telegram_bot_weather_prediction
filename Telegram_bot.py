@@ -3,6 +3,8 @@ from telebot import types
 import keys
 import pandas as pd
 import datetime
+from Weather_getter import Get_weather
+
 
 # Taken bot token from keys.py
 token = keys.bot_token
@@ -62,11 +64,11 @@ def message_reply(message):
 
     elif message.text == button_text1:  # Predict weather
         bot.send_message(message.chat.id, "Send your geolocation, you have to use this button:")
-        geoposition_instruction_photo = open('geoposition.jpg', 'rb')
+        geoposition_instruction_photo = open('Telegram bot/geoposition.jpg', 'rb')
         bot.send_photo(message.chat.id, geoposition_instruction_photo)
 
     elif message.text == button_text2:  # Get a meme
-        dog_meme_photo = open('dog_meme.jpg', 'rb')
+        dog_meme_photo = open('Telegram bot/dog_meme.jpg', 'rb')
         bot.send_message(message.chat.id, 'Sending a photo...')
         bot.send_photo(message.chat.id, dog_meme_photo)
 
@@ -96,7 +98,8 @@ def geolocation_reply(message):
 
     bot.send_message(message.chat.id, f'Your location:\n'
                                       f'longitude {lng}\n'
-                                      f'latitude {lat}')
+                                      f'latitude {lat}\n'
+                                      f'This location is: {Get_weather.get_location(lat, lng)}')
 
     second_button_keyboard(message)  # Creating new keyboard
 

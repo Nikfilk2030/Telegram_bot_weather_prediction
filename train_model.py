@@ -11,8 +11,6 @@ def train_weather_predictor(data: pd.DataFrame, regressor: RandomForestRegressor
     regressor = regressor if regressor else RandomForestRegressor(n_estimators=30, random_state=123)
     regressor.fit(x_train, y_train)
     print_fitting_result('training', regressor.score(x_train, y_train), regressor.score(x_test, y_test))
-    regressor.fit(x_test, y_test)
-    print_fitting_result('testing', regressor.score(x_train, y_train), regressor.score(x_test, y_test))
     return regressor
 
 def print_fitting_result(fit_mode: str, score_train: float, score_test: float) -> tp.NoReturn:

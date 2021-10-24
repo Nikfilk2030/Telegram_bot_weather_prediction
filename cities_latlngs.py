@@ -7,9 +7,10 @@ def get_latlng(city: str) -> tp.Tuple:
     print(location)
     return location.latitude, location.longitude
 
-def create_latlng(cities: tp.List) -> tp.NoReturn:
+def create_latlng(cities_filename:str) -> tp.NoReturn:
     with open('latlngs.txt', 'w') as file:
         print('locations used to train your model:')
+        cities = get_cities_list(cities_filename)
         for city in cities:
             file.write('{} {} {}\n'.format(city, *get_latlng(city)))
 

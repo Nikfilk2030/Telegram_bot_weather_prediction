@@ -1,0 +1,34 @@
+first_training_data.py: 
+	def create_train_data(locations_file:str) -> pandas.DataFrame
+	- this function takes the file where you store the data in the following format:
+		city_name latitude longtitude (moscow 55.7 37.5)
+
+train_model.py:
+	def train_weather_predictor(data: pandas.DataFrame, regressor: RabdomForestRegressor = None) -> RandomForestregressor:
+	- this function trains the regressor with data (creates one if regressor is None)
+
+predict_weather.py:
+	def predict(data: pandas.DataFrame, regressor: RandomForestregressor) -> numpy.ndarray
+	- this function predcits the weather taking needed parameters from data
+
+cities_latlngs.py:
+	def create_latlng(cities_filename: str) -> NoReturn
+	- this function takes the name of a file, where you store names of the cities and creates a file of following format:
+		city_name latitude longtitude (moscow 55.7 37.5)
+
+weather_history.py:
+	def get_history_data(frequency: int, start_date: str, end_date: str, api_key: str, cities_list_filename: str, dir: str) -> typing.NoReturn
+	- this function creates csv files with weather history data
+	  params:
+		frequency: timeperiod between the requests (hours)
+		   ex: 3 -> the requests will be made for every 3 hours (0 am, 3 am, 6 am, ...)
+		start_date: 
+			ex "18-OCT-2021"
+		end_date: 
+			ex "19-OCT-2021"
+		api_key: your weather history API key for https://www.worldweatheronline.com
+		cities_list_filename: name of a file, where you store a list of cities
+			ex: Moscow
+			    Kazan
+			    ...
+

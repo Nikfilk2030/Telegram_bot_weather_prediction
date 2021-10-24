@@ -69,9 +69,6 @@ def get_three_days_weather(lat: float, lng: float) -> pd.DataFrame:  # Is this m
     return df
 
 
-print(get_three_days_weather(55.81, 37.36))
-
-
 def get_location(lat: float, lng: float):
     global mgr
     return mgr.weather_at_coords(lat, lng).location.name

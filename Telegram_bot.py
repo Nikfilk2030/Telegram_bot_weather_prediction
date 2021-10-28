@@ -4,7 +4,10 @@ import keys
 import pandas as pd
 import datetime
 from Weather_getter import Get_weather
+import time
 
+# Creating ID - coordinates connection
+id_to_coordinates = {}
 
 # Taken bot token from keys.py
 token = keys.bot_token
@@ -59,6 +62,8 @@ def second_button_keyboard(message):  # To change main menu to "hours" menu
 
 @bot.message_handler(content_types='text')
 def message_reply(message):
+    global id_to_coordinates
+
     if message.text in messages_and_answers:  # Answering on simple things
         bot.send_message(message.chat.id, messages_and_answers[message.text])
 
@@ -77,16 +82,28 @@ def message_reply(message):
 
     elif message.text == button_text4:  # Weather now
         bot.send_message(message.chat.id, 'Sending the current weather...')
+        lat, lng = id_to_coordinates[message.chat.id][1], id_to_coordinates[message.chat.id][0]
+        unpacked_dataframe = Get_weather.unpack_df(Get_weather.get_current_weather(lat, lng), 0)
+        for criteria in unpacked_dataframe:
+            bot.send_message(message.chat.id, f'{criteria[0]}: {criteria[1]}')
 
     elif message.text == button_text5:  # Weather in 1 hour
         bot.send_message(message.chat.id, f"Sending the weather\n"
                                           f"at {(datetime.datetime.now() + datetime.timedelta(hours=1)).hour}"
                                           f" O'Clock...")
+        lat, lng = id_to_coordinates[message.chat.id][1], id_to_coordinates[message.chat.id][0]
+        unpacked_dataframe = Get_weather.unpack_df(Get_weather.get_three_days_weather(lat, lng), 1)
+        for criteria in unpacked_dataframe:
+            bot.send_message(message.chat.id, f'{criteria[0]}: {criteria[1]}')
 
     elif message.text == button_text6:  # Weather tomorrow at the same time
         bot.send_message(message.chat.id, f"Sending the weather\n"
                                           f"{(datetime.datetime.now() + datetime.timedelta(days=1)).date()} at\n"
                                           f"{(datetime.datetime.now() + datetime.timedelta(days=1)).hour} O'Clock...")
+        lat, lng = id_to_coordinates[message.chat.id][1], id_to_coordinates[message.chat.id][0]
+        unpacked_dataframe = Get_weather.unpack_df(Get_weather.get_three_days_weather(lat, lng), 24)
+        for criteria in unpacked_dataframe:
+            bot.send_message(message.chat.id, f'{criteria[0]}: {criteria[1]}')
 
     else:
         bot.send_message(message.chat.id, "Sorry, i can't understand this command yet")
@@ -94,12 +111,12 @@ def message_reply(message):
 
 @bot.message_handler(content_types='location')
 def geolocation_reply(message):
+    global id_to_coordinates
     lng, lat = message.location.longitude, message.location.latitude
+    id_to_coordinates[message.chat.id] = [lng, lat]
+    print(id_to_coordinates)
 
-    bot.send_message(message.chat.id, f'Your location:\n'
-                                      f'longitude {lng}\n'
-                                      f'latitude {lat}\n'
-                                      f'This location is: {Get_weather.get_location(lat, lng)}')
+    bot.send_message(message.chat.id, f'Your location:is: {Get_weather.get_location(lat, lng)}')
 
     second_button_keyboard(message)  # Creating new keyboard
 

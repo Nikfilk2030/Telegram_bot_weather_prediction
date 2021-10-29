@@ -1,11 +1,13 @@
-import telebot
-from telebot import types
-import keys
+from Weather_getter import keys
+from Weather_getter import Get_weather
+from Model import model_creation as mc
+import time
 import pandas as pd
 import datetime
-from Weather_getter import Get_weather
-import time
+import telebot
 
+#Creating ml model
+mc.model_creation()
 # Creating ID - coordinates connection
 id_to_coordinates = {}
 

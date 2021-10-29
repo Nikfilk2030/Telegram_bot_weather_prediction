@@ -13,6 +13,7 @@ def train_weather_predictor(data: pd.DataFrame, regressor: RandomForestRegressor
     print_fitting_result('training', regressor.score(x_train, y_train), regressor.score(x_test, y_test))
     return regressor
 
+
 def print_fitting_result(fit_mode: str, score_train: float, score_test: float) -> tp.NoReturn:
     print('model was fitted with ' + fit_mode + ' data')
     print('regressor\'s score on training data: ', score_train)

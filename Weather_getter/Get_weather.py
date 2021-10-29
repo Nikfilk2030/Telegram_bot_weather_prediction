@@ -2,7 +2,7 @@ from pyowm.owm import OWM
 import pandas as pd
 import datetime
 from datetime import datetime, timedelta
-import keys
+from Weather_getter import keys
 
 # Initing OWM
 owm = OWM(keys.owm_token)

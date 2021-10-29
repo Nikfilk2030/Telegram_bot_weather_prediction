@@ -1,8 +1,8 @@
-import first_training_data
-import predict_weather
-import train_model
+from Model import first_training_data
+from Model import predict_weather
+from Model import train_model
 from Weather_getter import Get_weather as gw
-import weather_history
+from Model import weather_history
 from Weather_getter import keys
 
 

@@ -5,6 +5,7 @@ import time
 import pandas as pd
 import datetime
 import telebot
+from telebot import types
 
 #Creating ml model
 mc.model_creation()

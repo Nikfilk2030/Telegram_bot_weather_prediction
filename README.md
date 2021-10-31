@@ -33,7 +33,7 @@ Algorythm of running is simple:
 
 # Our links:
 
-## Sheverdov Nikita:
+## Sheverdov Nikita
 
 https://github.com/Nikfilk2030
 

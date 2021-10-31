@@ -41,7 +41,7 @@ messages_and_answers = {"Tell me a joke": "When I see lovers' names carved in"
                                           " people bring a knife on a date.",
                         "Hello": "Hello",
                         "What can you do?": "How much are you ready to pay?",
-                        "No": "It's very sad ypu said that",
+                        "No": "It's very sad you said that",
                         "Yes": "I think you're right!"}
 
 
@@ -119,7 +119,7 @@ def message_reply(message):
                          f"Predicted temperature is: {round(predicted_weather[0], 2)}°C\n\n"
                          f"It's false only on {round(abs(predicted_weather[0] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
-                         f"It's not too much, isn't it?")
+                         f"It's not too much, is it?")
 
     elif message.text == button_text5:  # Weather in 5 hours
         bot.send_message(message.chat.id, f"Sending the weather\n"
@@ -141,7 +141,7 @@ def message_reply(message):
                          f"Predicted temperature is: {round(predicted_weather[5], 2)}°C\n\n"
                          f"It's false only on {round(abs(predicted_weather[5] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
-                         f"It's not too much, isn't it?")
+                         f"It's not too much, is it?")
 
     elif message.text == button_text6:  # Weather tomorrow at the same time
         bot.send_message(message.chat.id, f"Sending the weather\n"
@@ -163,7 +163,7 @@ def message_reply(message):
                          f"Predicted temperature is: {round(predicted_weather[24], 2)}°C\n\n"
                          f"It's false only on {round(abs(predicted_weather[24] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
-                         f"It's not too much, isn't it?")
+                         f"It's not too much, is it?")
 
     else:
         bot.send_message(message.chat.id, "Sorry, i can't understand this command yet")

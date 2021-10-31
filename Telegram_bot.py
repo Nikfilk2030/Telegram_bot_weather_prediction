@@ -47,7 +47,13 @@ messages_and_answers = {"Tell me a joke": "When I see lovers' names carved in"
 
 @bot.message_handler(commands=['start'])
 def greetings(message):
-    bot.send_message(message.chat.id, "Hello! Thanks for using me!")
+    bot.send_message(message.chat.id, "Hello! Thanks for using me!\n\n"
+                                      "This bot was made by:\n"
+                                      "Kasaeva Sabina @kasaevasab\n"
+                                      "Sheverdov Nikita @pchelka_zh\n"
+                                      "Checkout GitHub page: "
+                                      "https://github.com/Nikfilk2030/Telegram-bot-weather-prediction\n\n"
+                                      "Looking forward to your feedback!")
     button_maker(message)
 
 

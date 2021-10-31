@@ -1,5 +1,6 @@
 from pyowm.owm import OWM
 import pandas as pd
+import numpy as np
 import datetime
 from datetime import datetime, timedelta
 from Weather_getter import keys
@@ -72,3 +73,19 @@ def get_three_days_weather(lat: float, lng: float) -> pd.DataFrame:  # Is this m
 def get_location(lat: float, lng: float):
     global mgr
     return mgr.weather_at_coords(lat, lng).location.name
+
+
+def unpack_df(get_days_func, element_number: int):
+    counter = 0
+    """
+    First three rows are humidity, pressure, tempC, windspeedKmph.
+    That's, what we need
+    """
+    df = get_days_func
+    result = []
+    for element in df:
+        counter += 1
+        if counter > 4:
+            break
+        result.append([element, np.array(df[element][element_number])])
+    return result

@@ -117,7 +117,7 @@ def message_reply(message):
         print(predicted_weather[0])
         bot.send_message(message.chat.id,
                          f"Predicted temperature is: {round(predicted_weather[0], 2)}°C\n\n"
-                         f"It's false only on {round(abs(predicted_weather[0] - official_tempC), 2)}°C\n"
+                         f"It's false only at {round(abs(predicted_weather[0] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
                          f"It's not too much, is it?")
 
@@ -139,7 +139,7 @@ def message_reply(message):
         print(predicted_weather[5])
         bot.send_message(message.chat.id,
                          f"Predicted temperature is: {round(predicted_weather[5], 2)}°C\n\n"
-                         f"It's false only on {round(abs(predicted_weather[5] - official_tempC), 2)}°C\n"
+                         f"It's false only at {round(abs(predicted_weather[5] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
                          f"It's not too much, is it?")
 
@@ -161,7 +161,7 @@ def message_reply(message):
         print(predicted_weather[24])
         bot.send_message(message.chat.id,
                          f"Predicted temperature is: {round(predicted_weather[24], 2)}°C\n\n"
-                         f"It's false only on {round(abs(predicted_weather[24] - official_tempC), 2)}°C\n"
+                         f"It's false only at {round(abs(predicted_weather[24] - official_tempC), 2)}°C\n"
                          f"(It is delta between predicted and real weather)\n"
                          f"It's not too much, is it?")
 

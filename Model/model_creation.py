@@ -3,7 +3,7 @@ from Model import predict_weather
 from Model import train_model
 from Weather_getter import Get_weather as gw
 from Model import weather_history
-from Weather_getter import keys
+import keys
 
 
 def model_creation():
@@ -12,5 +12,5 @@ def model_creation():
     # cll.create_latlng('cities.txt')
     weather_data = first_training_data.create_train_data('Model\\latlngs.txt')
     regressor = train_model.train_weather_predictor(weather_data)
-    #print(predict_weather.predict(gw.get_three_days_weather(55.45, 37.36), regressor))
-
+    # print(predict_weather.predict(gw.get_three_days_weather(55.45, 37.36), regressor))
+    return regressor

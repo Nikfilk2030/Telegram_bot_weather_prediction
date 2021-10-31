@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import datetime
 from datetime import datetime, timedelta
-from Weather_getter import keys
+import keys
 
 # Initing OWM
 owm = OWM(keys.owm_token)

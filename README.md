@@ -3,11 +3,11 @@ This project has been made by HSE Computer Science students Kasaeva Sabina and S
 
 # Overall Prewiew
 
-This bot @Weather_prediction_FCS_bot can give you weather forecast for the nearest time and can also predict it using machine learning algorythm
+This bot @Weather_prediction_FCS_bot can give you weather forecast for the nearest future and can also predict it using machine learning algorythm
 
 # Description:
 
-While making this project our main goals were to impliment **as much features as we can**, including:
+While working on this project our main goal was to impliment **as much features as we can**, including:
 
 * Pandas dataframes
 * Machine learning algorythms

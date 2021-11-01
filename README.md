@@ -1,5 +1,5 @@
 # Telegram-bot-weather-prediction
-This project has been made by HSE Computer Science Kasaeva Sabina and Sheverdov Nikita
+This project has been made by HSE Computer Science students Kasaeva Sabina and Sheverdov Nikita
 
 # Overall Prewiew
 

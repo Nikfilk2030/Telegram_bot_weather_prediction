@@ -1,34 +1,34 @@
 # Telegram-bot-weather-prediction
-This project is made by HSE applied maths and informatics students Kasaeva Sabina and Sheverdov Nikita
+This project has been made by HSE Computer Science Kasaeva Sabina and Sheverdov Nikita
 
 # Overall Prewiew
 
-This bot @Weather_prediction_FCS_bot can give you weather forecast for nearest time and also calulate it using machine learning algorythms
+This bot @Weather_prediction_FCS_bot can give you weather forecast for the nearest time and can also predict it using machine learning algorythm
 
 # Description:
 
-While making this project our main goals were to impliment **as much as we can** features, including:
+While making this project our main goals were to impliment **as much features as we can**, including:
 
 * Pandas dataframes
 * Machine learning algorythms
 * Python telebot
 * APIs to collect and predict weather data
-* Good description and decoration of project
+* description and decoration of the project
 
 # Problems
 
-The main and the only problem is accuracy of prediction, which can be corrected by using different vectorisation machine
+The main and the only problem is the accuracy of prediction, which can be corrected by using another machine learning algorythm
 
 # How to run the bot
 
-Algorythm of running is simple:
+The algorythm of running is simple:
 
-* You have to install Python 3.8 (At least)
-* Create yor tokens and put them into keys.py in the main folder:
+* Install Python 3.8 (At least)
+* Create your tokens and put them into keys.py in the main folder:
   * bot_token = Telegram bot token using @BotFather
   * owm_token = OWM key using https://pyowm.readthedocs.io/en/2.10/usage-examples-v2/weather-api-usage-examples.html
-  * wwo_token = 'eb17522691384ca08f4205244212010'
-* And run Telegram_bot.py
+  * wwo_token = WWO history weather API token https://www.worldweatheronline.com/
+* Run Telegram_bot.py
 * Congrats!
 
 # Our links:

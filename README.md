@@ -13,7 +13,7 @@ While working on this project our main goal was to impliment **as much features 
 * Machine learning algorythms
 * Python telebot
 * APIs to collect and predict weather data
-* description and decoration of the project
+* Description and decoration of the project
 
 # Problems
 
